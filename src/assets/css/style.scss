@@ -1,0 +1,15 @@
+@import "./null";
+@import "variables";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+*{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: normal;
+}
+
+h3{
+  font-weight: 400;
+  font-size: 24px;
+}
