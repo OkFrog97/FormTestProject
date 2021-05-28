@@ -1,19 +1,19 @@
-<form class="form">
+<form class="form" [formGroup]="authForm">
   <h3 class="form__title">
     {{formTitle | uppercase}}
   </h3>
   <div class="form__group">
-    <input class="form__input"  type="text" id="form__name__filed" placeholder=" ">
+    <input class="form__input"  type="text" id="form__name__filed" placeholder=" " formControlName="login">
     <label class="form__label" for= "form__name__filed">{{loginTitle | titlecase}}</label>
   </div>
   <div class="form__group">
-    <input class="form__input"  type="password" id="form__password__filed" placeholder=" ">
+    <input class="form__input"  type="password" id="form__password__filed" placeholder=" " formControlName="password">
     <label class="form__label" for="form__password__filed">{{passwordTitle | titlecase}}</label>
-    <p *ngIf="true" class="form__error">
+    <p *ngIf="checkPassword()" class="form__error">
       <fa-icon [icon]="faTimesCircle1" class="form__error__icon"></fa-icon> {{errorText}}
     </p>
   </div>
   <div class="form__group">
-    <button class="form__submit">{{submitTitle | uppercase}}</button>
+    <button class="form__submit" [disabled]="isSubmitDisabled()" (click)="submit()">{{submitTitle | uppercase}}</button>
   </div>
 </form>
