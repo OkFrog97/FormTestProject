@@ -6,7 +6,7 @@
   background: $formBackgroundColor;
   border: 2px solid $formBackgroundColor;
   border-radius: 4px;
-  box-shadow: 0 16px 16px #ccc;
+  box-shadow: 0 8px 8px slategrey;
   .form__title {
     text-align: center;
     margin-bottom: 32px;
@@ -31,6 +31,7 @@
     background-color: rgba($formFiledBackground, 0.15);
     border: none;
     border-bottom: 1px solid $formFieldBottom;
+    border-radius: 4px;
     outline: none;
     transition: 0.2s;
     color: $regularTextColor;
@@ -50,8 +51,13 @@
     margin-top: 2px;
   }
 
-  .form__input:invalid:focus {
-    background: red;
+  .form__error {
+    font-size: 12px;
+    color: #e84640;
+  }
+
+  .form__error__icon {
+
   }
 
   .form__submit {

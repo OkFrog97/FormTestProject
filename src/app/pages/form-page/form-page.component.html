@@ -1,16 +1,19 @@
 <form class="form">
   <h3 class="form__title">
-    Авторизация
+    {{formTitle | uppercase}}
   </h3>
   <div class="form__group">
-    <input type="text" id="form__name__filed" class="form__input" placeholder=" " required>
-    <label class="form__label" for= "form__name__filed">Имя</label>
+    <input class="form__input"  type="text" id="form__name__filed" placeholder=" ">
+    <label class="form__label" for= "form__name__filed">{{loginTitle | titlecase}}</label>
   </div>
   <div class="form__group">
-    <input type="password" id="form__password__filed" class="form__input" placeholder=" ">
-    <label class="form__label" for="form__password__filed">Пароль</label>
+    <input class="form__input"  type="password" id="form__password__filed" placeholder=" ">
+    <label class="form__label" for="form__password__filed">{{passwordTitle | titlecase}}</label>
+    <p *ngIf="true" class="form__error">
+      <fa-icon [icon]="faTimesCircle1" class="form__error__icon"></fa-icon> {{errorText}}
+    </p>
   </div>
   <div class="form__group">
-    <button class="form__submit">Войти</button>
+    <button class="form__submit">{{submitTitle | uppercase}}</button>
   </div>
 </form>
