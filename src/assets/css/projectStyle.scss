@@ -12,6 +12,7 @@
 body {
   background: $background;
 }
+
 h3{
   font-weight: 400;
   font-size: 24px;
@@ -43,64 +44,67 @@ h3{
   .form__group {
     position: relative;
     margin-bottom: 32px;
-  }
-  .form__label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: $labelTextColor;
-    padding: 16px 12px;
-    font-size: 16px;
-    transition: 0.2s;
-  }
-  .form__input {
-    width: 100%;
-    height: 48px;
-    padding: 0 12px;
-    background-color: rgba($formFiledBackground, 0.15);
-    border: none;
-    border-bottom: 1px solid $formFieldBottom;
-    border-radius: 4px;
-    outline: none;
-    transition: 0.2s;
-    color: $regularTextColor;
-    font-size: 16px;
-  }
-  .form__input:hover {
-    background-color: rgba($formFiledBackground, 0.25)
-  }
-  .form__input:focus {
-    border-bottom: 1px solid $focusedFormFieldBottom;
-  }
+    .form__label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: $labelTextColor;
+      padding: 12px 6px;
+      font-size: 16px;
+      transition: 0.2s;
+      cursor: text;
+    }
+    .form__label::selection {
+      background-color: transparent;
+    }
+    .form__input {
+      width: 100%;
+      height: 48px;
+      padding: 0 12px;
+      background-color: rgba($formFiledBackground, 0.15);
+      border: none;
+      border-bottom: 1px solid $formFieldBottom;
+      border-radius: 4px 4px 0 0;
+      outline: none;
+      transition: 0.2s;
+      color: $regularTextColor;
+      font-size: 16px;
+    }
+    .form__input:hover {
+      background-color: rgba($formFiledBackground, 0.25);
+    }
+    .form__input:focus {
+      border-bottom: 2px solid $focusedFormFieldBottom;
+    }
 
-  .form__input:focus ~ .form__label,
-  .form__input:not(:placeholder-shown) ~ .form__label {
-    top: -18px;
-    font-size: 12px;
-    margin-top: 2px;
+    .form__input:focus ~ .form__label,
+    .form__input:not(:placeholder-shown) ~ .form__label {
+      top: -18px;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .ng-touched.ng-invalid {
+      border-bottom: 1px solid $errorColor;
+    }
+
+    .form__error {
+      font-size: 12px;
+      color: $errorColor;
+    }
+
+    .form__submit {
+      padding: 12px 24px;
+      color: $regularTextColor;
+      border: none;
+      border-radius: 4px;
+      background: $formButton;
+    }
+
+    .form__submit:active {
+      background-color: rgba($formButton, 0.75);
+    }
+
   }
-
-  .ng-touched.ng-invalid {
-    border-bottom: 1px solid $errorColor;
-  }
-
-  .form__error {
-    font-size: 12px;
-    color: $errorColor;
-  }
-
-  .form__submit {
-    padding: 12px 24px;
-    color: $regularTextColor;
-    border: none;
-    border-radius: 4px;
-    background: $formButton;
-  }
-
-  .form__submit:active {
-    background-color: rgba($formButton, 0.75);
-  }
-
-
 
 }
